@@ -1,0 +1,6 @@
+<div class="container" *ngIf="form">
+    <form (ngSubmit)="onSubmit()" [formGroup]="form">
+        <ng-container #fields></ng-container>
+        <button mat-flat-button color="primary" type="submit" [disabled]="!form.valid">Save</button>    
+    </form>
+</div>

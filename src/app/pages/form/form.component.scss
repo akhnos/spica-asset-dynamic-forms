@@ -1,0 +1,14 @@
+:host {
+  .container{
+    max-width: 1280px;
+    margin: auto;
+    form{
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      ::ng-deep mat-form-field{
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,5 @@
+<div [formGroup]="form" color="primary">
+    <mat-label>{{label}}</mat-label>
+    <input type="file" (change)="onFileChanged($event)">
+    <mat-error *ngIf="!form.controls[key].valid">{{label}} is required</mat-error>
+</div>
