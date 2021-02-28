@@ -13,6 +13,7 @@ import { TextareaComponent } from "src/app/inputs/textarea/textarea.component";
 import { FormGroup } from "@angular/forms";
 import { QuestionControlService } from "src/app/services/question-control.service";
 import {MatSnackBar} from '@angular/material/snack-bar';
+import { ActivatedRoute } from "@angular/router";
 
 
 @Component({
@@ -21,7 +22,7 @@ import {MatSnackBar} from '@angular/material/snack-bar';
   styleUrls: ["./form.component.scss"],
 })
 export class FormComponent implements OnInit {
-  private formBucket = "603b8f981f7cc7002cebe96c";
+  private formBucket;
   private formFields;
   
   components = {
@@ -38,10 +39,12 @@ export class FormComponent implements OnInit {
   constructor(
     private resolver: ComponentFactoryResolver,
     private qcs: QuestionControlService,
-    private _snackBar: MatSnackBar
+    private _snackBar: MatSnackBar,
+    private route: ActivatedRoute
   ) {}
 
   async ngOnInit() {
+    this.formBucket = this.route.snapshot.paramMap.get("id");
     Bucket.initialize({
       publicUrl: "https://test-4061d.hq.spicaengine.com/api",
       apikey: "fyve9e1kfwmh1wl",

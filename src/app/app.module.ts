@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +15,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { QrComponent } from './pages/qr/qr.component';
 
 @NgModule({
   declarations: [
@@ -22,13 +24,16 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     NumberComponent,
     FormComponent,
     TextareaComponent,
-    StorageComponent
+    StorageComponent,
+    QrComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
+    HttpClientModule,
+    
     MatButtonModule,
     MatInputModule,
     MatSnackBarModule 
